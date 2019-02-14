@@ -11,7 +11,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "@donut-chart": "git+https://github.com/Lionardo/donut-chart-lib.git"
+    "@donut-chart": "git+https://github.com/Lionardo/donut-chart-lib/tree/master/dist/donut-chart.git"
   },
   "private": true,
   "dependencies": {
