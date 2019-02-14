@@ -1,0 +1,17 @@
+{
+  "extends": "../../tslint.json",
+  "rules": {
+    "directive-selector": [
+      true,
+      "attribute",
+      "iazi-charts",
+      "camelCase"
+    ],
+    "component-selector": [
+      true,
+      "element",
+      "iazi-charts",
+      "kebab-case"
+    ]
+  }
+}

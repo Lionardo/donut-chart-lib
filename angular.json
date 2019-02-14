@@ -116,6 +116,332 @@
           }
         }
       }
+    },
+    "donut": {
+      "root": "projects/donut",
+      "sourceRoot": "projects/donut/src",
+      "projectType": "library",
+      "prefix": "iazi-charts",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/donut/tsconfig.lib.json",
+            "project": "projects/donut/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/donut/src/test.ts",
+            "tsConfig": "projects/donut/tsconfig.spec.json",
+            "karmaConfig": "projects/donut/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/donut/tsconfig.lib.json",
+              "projects/donut/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "donut-tester": {
+      "root": "projects/donut-tester/",
+      "sourceRoot": "projects/donut-tester/src",
+      "projectType": "application",
+      "prefix": "app",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/donut-tester",
+            "index": "projects/donut-tester/src/index.html",
+            "main": "projects/donut-tester/src/main.ts",
+            "polyfills": "projects/donut-tester/src/polyfills.ts",
+            "tsConfig": "projects/donut-tester/tsconfig.app.json",
+            "assets": [
+              "projects/donut-tester/src/favicon.ico",
+              "projects/donut-tester/src/assets"
+            ],
+            "styles": [
+              "projects/donut-tester/src/styles.css"
+            ],
+            "scripts": [],
+            "es5BrowserSupport": true
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/donut-tester/src/environments/environment.ts",
+                  "with": "projects/donut-tester/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "donut-tester:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "donut-tester:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "donut-tester:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/donut-tester/src/test.ts",
+            "polyfills": "projects/donut-tester/src/polyfills.ts",
+            "tsConfig": "projects/donut-tester/tsconfig.spec.json",
+            "karmaConfig": "projects/donut-tester/karma.conf.js",
+            "styles": [
+              "projects/donut-tester/src/styles.css"
+            ],
+            "scripts": [],
+            "assets": [
+              "projects/donut-tester/src/favicon.ico",
+              "projects/donut-tester/src/assets"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/donut-tester/tsconfig.app.json",
+              "projects/donut-tester/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "donut-tester-e2e": {
+      "root": "projects/donut-tester-e2e/",
+      "projectType": "application",
+      "prefix": "",
+      "architect": {
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/donut-tester-e2e/protractor.conf.js",
+            "devServerTarget": "donut-tester:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "donut-tester:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "projects/donut-tester-e2e/tsconfig.e2e.json",
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "donut-chart": {
+      "root": "projects/donut-chart",
+      "sourceRoot": "projects/donut-chart/src",
+      "projectType": "library",
+      "prefix": "iazi-charts",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/donut-chart/tsconfig.lib.json",
+            "project": "projects/donut-chart/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/donut-chart/src/test.ts",
+            "tsConfig": "projects/donut-chart/tsconfig.spec.json",
+            "karmaConfig": "projects/donut-chart/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/donut-chart/tsconfig.lib.json",
+              "projects/donut-chart/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "donut-chart-tester": {
+      "root": "projects/donut-chart-tester/",
+      "sourceRoot": "projects/donut-chart-tester/src",
+      "projectType": "application",
+      "prefix": "app",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/donut-chart-tester",
+            "index": "projects/donut-chart-tester/src/index.html",
+            "main": "projects/donut-chart-tester/src/main.ts",
+            "polyfills": "projects/donut-chart-tester/src/polyfills.ts",
+            "tsConfig": "projects/donut-chart-tester/tsconfig.app.json",
+            "assets": [
+              "projects/donut-chart-tester/src/favicon.ico",
+              "projects/donut-chart-tester/src/assets"
+            ],
+            "styles": [
+              "projects/donut-chart-tester/src/styles.css"
+            ],
+            "scripts": [],
+            "es5BrowserSupport": true
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/donut-chart-tester/src/environments/environment.ts",
+                  "with": "projects/donut-chart-tester/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "donut-chart-tester:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "donut-chart-tester:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "donut-chart-tester:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/donut-chart-tester/src/test.ts",
+            "polyfills": "projects/donut-chart-tester/src/polyfills.ts",
+            "tsConfig": "projects/donut-chart-tester/tsconfig.spec.json",
+            "karmaConfig": "projects/donut-chart-tester/karma.conf.js",
+            "styles": [
+              "projects/donut-chart-tester/src/styles.css"
+            ],
+            "scripts": [],
+            "assets": [
+              "projects/donut-chart-tester/src/favicon.ico",
+              "projects/donut-chart-tester/src/assets"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/donut-chart-tester/tsconfig.app.json",
+              "projects/donut-chart-tester/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "donut-chart-tester-e2e": {
+      "root": "projects/donut-chart-tester-e2e/",
+      "projectType": "application",
+      "prefix": "",
+      "architect": {
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/donut-chart-tester-e2e/protractor.conf.js",
+            "devServerTarget": "donut-chart-tester:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "donut-chart-tester:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "projects/donut-chart-tester-e2e/tsconfig.e2e.json",
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "donut-lib"

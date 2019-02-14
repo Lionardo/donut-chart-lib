@@ -1,0 +1,11 @@
+{
+  "name": "donut-chart",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "^7.2.0",
+    "@angular/core": "^7.2.0"
+  },
+  "dependencies": {
+    "d3": "^5.7.0"
+  }
+}
