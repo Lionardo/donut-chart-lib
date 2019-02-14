@@ -1,6 +1,8 @@
 {
   "name": "donut-chart",
   "version": "0.0.1",
+  "author": "Lionardo Mendonca",
+  "repository": "https://github.com/Lionardo/donut-chart-lib.git",
   "peerDependencies": {
     "@angular/common": "^7.2.0",
     "@angular/core": "^7.2.0"
@@ -9,6 +11,7 @@
     "d3": "^5.7.0",
     "tslib": "^1.9.0"
   },
+  "license": "MIT",
   "main": "bundles/donut-chart.umd.js",
   "module": "fesm5/donut-chart.js",
   "es2015": "fesm2015/donut-chart.js",

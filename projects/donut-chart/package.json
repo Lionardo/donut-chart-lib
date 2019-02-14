@@ -1,11 +1,14 @@
 {
   "name": "donut-chart",
   "version": "0.0.1",
+  "author": "Lionardo Mendonca",
+  "repository": "https://github.com/Lionardo/donut-chart-lib.git",
   "peerDependencies": {
     "@angular/common": "^7.2.0",
     "@angular/core": "^7.2.0"
   },
   "dependencies": {
     "d3": "^5.7.0"
-  }
+  },
+  "license": "MIT"
 }
