@@ -10,7 +10,8 @@
     "package": "npm run build:lib && npm run npm:pack",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "@donut-chart": "git+https://github.com/Lionardo/donut-chart-lib.git"
   },
   "private": true,
   "dependencies": {
